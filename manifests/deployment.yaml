@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: py-web-server-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: py-web-server
+  template:
+    metadata:
+      labels:
+        app: py-web-server
+    spec:
+      containers:
+        - name: py-web-server
+          image: m1kkou/a-simple-py-web-app:latest
